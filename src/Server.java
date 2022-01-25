@@ -8,6 +8,8 @@ import java.util.Vector;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.sun.tools.jconsole.JConsoleContext.ConnectionState;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -43,6 +45,9 @@ public class Server extends Application{
 				while(true) {
 					Socket socket = serverSocket.accept();
 					String message = "[연결 수락: "+ socket.getRemoteSocketAddress() + ": " + Thread.currentThread().getName() + "]";
+					
+					Client client = new Client(socket);
+					connections.add(client);
 					Platform.runLater(()->{
 						displayText("[연결 개수: " + connections.size() + "]");
 					});
