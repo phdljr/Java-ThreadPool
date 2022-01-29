@@ -5,7 +5,7 @@
 스레드풀은 ExecutorService 클래스를 통해 만들 수 있다.
 ```
 executorService = Executors.newFixedThreadPool( //ExecutorService 객체를 얻기 위한 메소드
-	Runtime.getRuntime().availableProcessors() //CPU 코어의 수만큼 스레드를 만들도록 함. int형으로 반환됨
+	Runtime.getRuntime().availableProcessors() //CPU 코어의 수만큼 스레드를 만들도록 함. int형으로 반환됨.
 );
 ```    
 -----------------------------------------------------------------------------------------------------------
